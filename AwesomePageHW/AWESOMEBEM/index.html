@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="main">
+    <div class="js-content-hider_unvisible" id="hider"></div>
+
+    <aside class="popup-menu js-popup-menu_unvisible" id="popupMenu">
+        <a href="#" class="popup-menu-link">Link1</a>
+        <a href="#" class="popup-menu-link">Link1</a>
+        <a href="#" class="popup-menu-link">Link1</a>
+        <button class="popup-menu-close-button" onclick="hidePopup()">X</button>
+
+    </aside>
+
+    <header class="header">
+        <button type="button" class="header-button">btn1</button>
+        <a href="#" class="header-link">Link1</a>
+        <a href="#" class="header-link">Link1</a>
+        <a href="#" class="header-link">Link1</a>
+        <button class="header-popup-button" onclick="showPopup()">
+            something
+        </button>
+
+
+    </header>
+    <section class="content-section">
+        <div class="first-section">
+
+            <section class="block-container" id="blocksContainer">
+                <div class="block-container-item">1</div>
+                <div class="block-container-item">2</div>
+                <div class="block-container-item">3</div>
+                <div class="block-container-item">4</div>
+                <div class="block-container-item">5</div>
+
+                <div class="button-container">
+                    <button class="button-container-add-blocks-button" onclick="addBlocks()">Add Blocks</button>
+                </div>
+            </section>
+        </div>
+        <section class="second-section">
+
+            <div class="colors">
+                <div class="colors-item colors-animated-color_small-res">1</div>
+                <div class="colors-item colors-animated-color">2</div>
+                <div class="colors-item">3</div>
+                <div class="colors-item colors-animated-color">4</div>
+                <div class="colors-item colors-animated-color_small-res">5</div>
+                <div class="colors-item">6</div>
+            </div>
+        </section>
+        <section class="third-section">
+
+            <div class="pic-container">
+                <div class="pic-container-item">1</div>
+                <div class="pic-container-item">2</div>
+
+            </div>
+        </section>
+    </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

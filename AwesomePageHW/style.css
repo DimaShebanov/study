@@ -1,0 +1,413 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+    main {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        border: solid black 1px;
+        box-sizing: border-box;
+    }
+
+    header {
+        min-height: 40px;
+        border: solid black 1px;
+    }
+
+    .content-section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        border: solid black 1px;
+
+    }
+
+    .first-section {
+        flex: 5;
+        border: solid black 1px;
+        background-color: green;
+        display: flex;
+        justify-content: center;
+    }
+
+    .second-section {
+        flex: 3;
+        border: solid black 1px;
+        background-color: blue;
+        display: flex;
+        justify-content: center;
+    }
+
+    .third-section {
+        flex: 3;
+        border: solid black 1px;
+        background-color: red;
+        display: flex;
+        justify-content: center;
+        min-height: 30vh;
+
+    }
+
+    .popup-menu {
+        display: none;
+    }
+
+    .block-container {
+        border: double black 1px;
+        min-width: 1024px;
+        background-color: white;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: stretch;
+    }
+
+    .color-container {
+        border: double black 1px;
+        min-width: 1024px;
+        min-height: 30%;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        flex-wrap: wrap;
+        background-color: white;
+    }
+
+    .pic-container {
+        border: double black 1px;
+        min-width: 1024px;
+        background-image: url("theodor-kittelsens-160th-birthday-5109857987330048-l.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .usualButton {
+        float: right;
+        margin-top: 10px;
+        min-width: 7%;
+    }
+
+    #add-blocks {
+        display: none;
+    }
+
+    .link {
+        min-height: inherit;
+        min-width: 20%;
+        border: solid black 1px;
+        border-radius: 0;
+        float: left;
+        text-align: center;
+        line-height: 42px;
+    }
+
+    .popup-button {
+        display: none;
+    }
+
+    .block {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border: solid black 1px;
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        /*max-height: 30%;*/
+        min-width: 18%;
+        background-color: yellowgreen;
+    }
+
+    .color {
+        min-height: 100%;
+        border: solid yellow 1px;
+        background-color: lawngreen;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: xx-large;
+        overflow: hidden;
+
+
+    }
+
+    .pic-block {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: yellow;
+        min-width: 30%;
+        min-height: 70%;
+    }
+    .color-in
+    {
+        background-color: #b03911;
+        min-width: 100%;
+        align-self: stretch;
+    }
+
+    /*.color.animated-color:hover {*/
+        /*!*background-color: blue;*!*/
+        /*!*color: transparent;*!*/
+        /*!*background-image: linear-gradient(white, black, white);*!*/
+        /*!*animation: background-vert 5s infinite;*!*/
+    /*}*/
+    .color-in:hover
+    {
+        background-color: blue;
+        color: transparent;
+        background-image: linear-gradient(white , black, white);
+        animation: background-vert linear 5s infinite;
+    }
+    @keyframes background-vert {
+
+        0%
+        {
+            background-position: 0 0;
+            transform: rotateX(0);
+
+        }
+        10%
+        {
+            background-position: 0 50px;
+            transform: rotateX(0);
+        }
+        20%
+        {
+            background-position: 0 100px;
+            transform: rotateX(0);
+        }
+        30%
+        {
+            background-position: 0 150px;
+            transform: rotateX(0);
+        }
+        40%
+        {
+            background-position: 0 200px;
+            transform: rotateX(0);
+        }
+        50%
+        {
+            background-position: 0 250px;
+            transform: rotateX(0);
+        }
+        60%
+        {
+            background-position: 0 300px;
+            transform: rotateX(0);
+
+        }
+        70%
+        {
+            background-position: 0 350px;
+            transform: rotateX(0);
+
+        }
+        80%
+        {
+            background-position: 0 400px;
+            transform: rotateX(0);
+
+        }
+        90%
+        {
+            background-position: 0 450px;
+            transform: rotateX(0);
+
+        }
+
+        100% {
+            background-position: 0 500px;
+            transform: rotateX(360deg);
+        }
+    }
+
+@media all and (max-width: 1024px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        border: solid black 1px;
+        box-sizing: border-box;
+    }
+
+    header {
+        min-height: 40px;
+        border: solid black 1px;
+    }
+
+    .popup-button {
+        float: left;
+    }
+
+    .popup-menu {
+        position: fixed;
+        min-height: 100%;
+        min-width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        border: solid white 1px;
+        display: none;
+    }
+
+    .popup-link {
+        min-height: 20vh;
+        border: solid black 1px;
+        border-radius: 0;
+    }
+
+    #close-popup-button {
+        min-height: 10%;
+        min-width: 15%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: red;
+        font-size: xx-large;
+        border: solid black 1px;
+        border-radius: 0;
+    }
+
+    .content-section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        border: solid black 1px;
+
+    }
+
+    .first-section {
+        flex: 3;
+        border: solid black 1px;
+        background-color: green;
+        display: flex;
+        justify-content: center;
+    }
+
+    .second-section {
+        flex: 3;
+        border: solid black 1px;
+        background-color: blue;
+        display: flex;
+        justify-content: center;
+    }
+
+    .third-section {
+        display: none;
+    }
+
+    .block-container {
+        min-width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+
+    .block {
+        background-color: yellow;
+        margin-top: 1px;
+        border: solid black 1px;
+        min-width: 40%;
+    }
+
+    .color-container {
+        min-width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .color {
+        flex: 1;
+        border: solid black 1px;
+        background-color: yellow;
+    }
+
+    .color.animated-color-small-res:hover {
+        background-color: #0000FF;
+        color: transparent;
+        background: linear-gradient(to right, white, blue, black, blue, white);
+        animation: background 5s infinite normal;
+
+    }
+
+    @keyframes background {
+
+        0% {
+            background-position: 0 0;
+        }
+        /*10% {*/
+            /*background-position: 100px 0;*/
+        /*}*/
+        /*20% {*/
+            /*background-position: 200px 0;*/
+        /*}*/
+        /*30% {*/
+            /*background-position: 300px 0;*/
+        /*}*/
+        /*40% {*/
+            /*background-position: 400px 0;*/
+        /*}*/
+        /*50% {*/
+            /*background-position: 500px 0;*/
+        /*}*/
+        /*60% {*/
+            /*background-position: 600px 0;*/
+        /*}*/
+        /*70% {*/
+            /*background-position: 700px 0;*/
+        /*}*/
+        /*80% {*/
+            /*background-position: 800px 0;*/
+        /*}*/
+        /*90% {*/
+            /*background-position: 900px 0;*/
+        /*}*/
+
+        100% {
+            background-position: 1000px 0;
+        }
+    }
+
+    .add-blocks-container {
+        order: 1;
+        align-self: flex-end;
+        min-height: 20%;
+        display: flex;
+        justify-content: center;
+        -webkit-justify-content: center;
+        align-items: stretch;
+        min-width: 100%;
+    }
+
+    #add-blocks {
+        font-size: x-small;
+    }
+
+    .usualButton {
+        float: right;
+        margin-top: 10px;
+        min-width: 7%;
+    }
+
+    .link {
+        display: none;
+    }
+
+    .popup-button {
+        background-color: blue;
+        border-radius: 0;
+        min-width: 5%;
+        border: solid black 1px;
+    }
+}
+
