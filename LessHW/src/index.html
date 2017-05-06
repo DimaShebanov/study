@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<main class="main">
+    <div class="js-content-hider_unvisible" id="hider"></div>
+
+    <aside class="popup-menu js-popup-menu_unvisible" id="popupMenu">
+        <a href="#" class="popup-menu__link">Link1</a>
+        <a href="#" class="popup-menu__link">Link1</a>
+        <a href="#" class="popup-menu__link">Link1</a>
+        <button class="popup-menu__close-button" onclick="hidePopup()">X</button>
+
+    </aside>
+
+    <header class="header">
+        <button type="button" class="header__button">btn1</button>
+        <a href="#" class="header__link">Link1</a>
+        <a href="#" class="header__link">Link1</a>
+        <a href="#" class="header__link">Link1</a>
+        <button class="header__popup-button" onclick="showPopup()">
+            showMe
+        </button>
+
+
+    </header>
+    <section class="content-section">
+        <div class="section-first">
+
+            <section class="block-container" id="blocksContainer">
+                <div class="block-container__item">1</div>
+                <div class="block-container__item">2</div>
+                <div class="block-container__item">3</div>
+                <div class="block-container__item">4</div>
+                <div class="block-container__item">5</div>
+                <div class="button-container">
+                    <button class="button-container__add-blocks-button" onclick="addBlocks()">Add Blocks</button>
+                </div>
+            </section>
+        </div>
+        <section class="section-second">
+
+            <div class="colors">
+                <div class="colors__item">1</div>
+                <div class="colors__item">2</div>
+                <div class="colors__item">3</div>
+                <div class="colors__item">4</div>
+                <div class="colors__item">5</div>
+                <div class="colors__item">6</div>
+            </div>
+        </section>
+        <section class="section-third">
+            <div class="pic-container">
+                <div class="pic-container__item">1</div>
+                <div class="pic-container__item">2</div>
+            </div>
+        </section>
+    </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,416 @@
+.myBorder(@color:black) {
+  border: solid @color 1px;
+}
+
+.flexDirectionMix(@flex-direct:row) {
+  flex-direction: @flex-direct;
+  -ms-flex-direction: @flex-direct;
+  -webkit-flex-direction: @flex-direct;
+}
+
+.flexJustifyMix(@justify-content:center) {
+  justify-content: @justify-content;
+  -webkit-justify-content: @justify-content;
+}
+
+.flexWrapMix(@wrap:nowrap) {
+  flex-wrap: @wrap;
+  -ms-flex-wrap: @wrap;
+  -webkit-flex-wrap: @wrap;
+}
+
+.flexAlignItemsMix(@items-align:center) {
+  align-items: @items-align;
+  -webkit-align-items: @items-align;
+}
+
+.flexAlignContentMix(@align-content) {
+  align-content: @align-content;
+  -webkit-align-content: @align-content;
+}
+
+.flexGrowShrBasMix(@grow:0, @shrink:1, @basis:auto) {
+  flex: @arguments;
+  -ms-flex: @arguments;
+  -webkit-flex: @arguments;
+}
+
+.backgroundImgProp(@url, @repeat, @size) {
+  background-image: url(@url);
+  -o-background-image: url(@url);
+  -moz-background-image: url(@url);
+  -webkit-background-image: url(@url);
+
+  background-repeat: @repeat;
+
+  background-size: @size;
+}
+
+.section-mixin {
+  .myBorder();
+  display: flex;
+  .flexJustifyMix(center);
+  .flexAlignItemsMix(stretch);
+}
+
+.animated-item_mixin {
+  background: linear-gradient(to top, darkorange, lime, darkorange);
+  color: transparent;
+  animation: biggradflow linear 300s infinite;
+}
+
+@keyframes biggradflow {
+
+  0% {
+    background-position-y: 0;
+  }
+
+  100% {
+    background-position-y: 20000px;
+  }
+}
+
+@keyframes popingUp {
+  from {
+    transform: translateX(-400px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes hidingContent {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes popingDown {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-400px);
+  }
+}
+
+@keyframes showingAll {
+  0% {
+
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@media all and (min-width: 1024px) {
+  .main {
+    min-height: 100vh;
+    background-color: greenyellow;
+    box-sizing: border-box;
+    display: flex;
+
+    .flexDirectionMix(column);
+    .flexAlignItemsMix(stretch);
+    .myBorder();
+  }
+
+  .header {
+    .myBorder();
+    min-height: 40px;
+    &__link {
+      .myBorder();
+      float: left;
+      min-width: 20%;
+      text-align: center;
+      line-height: 40px;
+    }
+
+    &__button {
+      float: right;
+      min-height: inherit;
+      min-width: 10%;
+    }
+
+    &__popup-button {
+      display: none;
+    }
+  }
+
+  .content-section {
+    flex: 1;
+    .myBorder();
+    display: flex;
+    .flexDirectionMix(column);
+    .flexAlignItemsMix(stretch);
+  }
+
+  .popup-menu {
+    display: none
+  }
+
+  .section {
+    &-first {
+      .flexGrowShrBasMix(1);
+      background-color: yellow;
+      .section-mixin();
+    }
+
+    &-second {
+      .flexGrowShrBasMix(1, 2);
+      background-color: blue;
+      .section-mixin();
+    }
+
+    &-third {
+      .flexGrowShrBasMix(3, 2);
+      background-color: green;
+      .section-mixin();
+    }
+  }
+
+  .block-container {
+    display: flex;
+    .myBorder();
+    .flexWrapMix(wrap);
+    .flexJustifyMix(flex-start);
+    .flexAlignItemsMix(stretch);
+    min-width: 1024px;
+    &__item {
+      background-color: limegreen;
+      .myBorder();
+      margin: 3px 4px;
+      min-width: 19%;
+      min-height: 40px;
+    }
+    .button-container {
+      display: none;
+    }
+  }
+
+  .colors {
+    .myBorder();
+    display: flex;
+    min-width: 1024px;
+    background-color: mediumspringgreen;
+    min-height: 70px;
+
+    &__item {
+      min-height: 150px;
+      .myBorder(yellow);
+      .flexGrowShrBasMix(1);
+      display: flex;
+      .flexJustifyMix(center);
+      .flexAlignItemsMix(center);
+      margin: -1px 0.5px 0 0.5px;
+      background-color: crimson;
+      font-size: 30px;
+    }
+
+    &__item:nth-child(2):hover {
+      .animated-item_mixin();
+    }
+
+    &__item:nth-child(4):hover {
+      .animated-item_mixin();
+    }
+  }
+
+  .pic-container {
+    .myBorder();
+    min-width: 1024px;
+    .backgroundImgProp("theodor-kittelsens-160th-birthday-5109857987330048-l.png", no-repeat, 100%);
+    display: flex;
+    .flexJustifyMix(space-around);
+    .flexAlignItemsMix(center);
+
+    &__item {
+      .myBorder();
+      display: flex;
+      .flexJustifyMix(center);
+      .flexAlignItemsMix(center);
+      font-size: 30px;
+      background-color: darkorange;
+      height: 70%;
+      width: 40%;
+    }
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .main {
+    min-height: 100vh;
+    background-color: greenyellow;
+    box-sizing: border-box;
+    display: flex;
+
+    .flexDirectionMix(column);
+    .flexAlignItemsMix(stretch);
+    .myBorder();
+  }
+
+  .header {
+    min-height: 50px;
+    .myBorder();
+    background-color: wheat;
+
+    &__button {
+      float: right;
+      min-height: inherit;
+      min-width: 50px;
+    }
+
+    &__link {
+      display: none;
+    }
+
+    &__popup-button {
+      min-height: inherit;
+      min-width: 50px;
+      background-color: deepskyblue;
+    }
+  }
+
+  .popup-menu {
+    position: fixed;
+    min-height: 100%;
+    min-width: 25%;
+    .myBorder();
+    background-color: yellow;
+
+    &__link {
+      float: left;
+      min-width: 100%;
+      text-align: center;
+      line-height: 120px;
+      .myBorder();
+    }
+
+    &__close-button {
+      position: absolute;
+      bottom: 5px;
+      right: 1px;
+      .myBorder();
+      font-size: 30px;
+      background-color: red;
+    }
+  }
+
+  .js-popup-menu {
+
+    &_visible {
+      animation: popingUp linear 1s 1;
+    }
+
+    &_hiding {
+      animation: popingDown linear 1s;
+    }
+
+    &_unvisible {
+      display: none;
+    }
+  }
+
+  .js-content-hider {
+    &_visible {
+      animation: hidingContent linear 1s;
+      background-color: black;
+
+      position: fixed;
+      width: 100%;
+      height: 100%;
+    }
+
+    &_hiding {
+      animation: showingAll linear 1s;
+      background-color: black;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+    }
+
+    &_unvisible {
+      display: none;
+    }
+  }
+
+.content-section
+{
+  .flexGrowShrBasMix(1);
+  .myBorder();
+  display: flex;
+  .flexDirectionMix(column);
+  .flexAlignItemsMix(stretch);
+}
+
+.section
+{
+    &-first {
+      .flexGrowShrBasMix(2);
+      background-color: yellow;
+      .section-mixin();
+    }
+
+    &-second {
+      .flexGrowShrBasMix(1);
+      background-color: blue;
+      .section-mixin();
+    }
+
+    &-third {
+      .flexGrowShrBasMix(2);
+      background-color: green;
+      .section-mixin();
+    }
+  }
+
+.block-container
+{
+  display: flex;
+  min-width: 100%;
+  .myBorder();
+  .flexWrapMix(wrap);
+  .flexJustifyMix(space-between);
+  .flexAlignContentMix(space-around);
+
+  &__item
+  {
+    min-width: 40%;
+
+    .myBorder();
+    height: 60px;
+    background-color: limegreen;
+  }
+
+  .button-container
+  {
+    align-self: flex-end;
+    order: 1;
+    display: flex;
+    .flexJustifyMix(center);
+    min-width: 100%;
+    height: 40px;
+    &__add-blocks-button
+    {
+      height: inherit;
+    }
+  }
+
+  
+}
+
+}
+
+
